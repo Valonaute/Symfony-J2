@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{%  block contenu %}
+<p>Vous êtes sur la page des contacts </p>
+<table>
+{% for onecontact in contacts %}
+
+    <tr> {{onecontact.id}} </tr>
+    <tr> {{onecontact.nom}} </tr>
+    <tr> {{onecontact.prenom}} </tr>
+    <tr> {{onecontact.email}} </tr>
+
+{% endfor %}
+</table>
+{% endblock %}

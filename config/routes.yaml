@@ -1,0 +1,17 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+accueil:
+    path: /accueil
+    controller: App\Controller\HomeController::afficherAccueil
+
+form:
+    path: /form
+    controller: App\Controller\ContactController::afficherContact
+
+contacts:
+    path: /contacts
+    controller: App\Controller\ContactController::showContact

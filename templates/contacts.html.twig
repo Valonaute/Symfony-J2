@@ -2,14 +2,30 @@
 
 {%  block contenu %}
 <p>Vous êtes sur la page des contacts </p>
-<table>
-{% for onecontact in contacts %}
 
-    <tr> {{onecontact.id}} </tr>
-    <tr> {{onecontact.nom}} </tr>
-    <tr> {{onecontact.prenom}} </tr>
-    <tr> {{onecontact.email}} </tr>
-
-{% endfor %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for onecontact in contacts %}
+    <tr>
+      <th scope="row">{{onecontact.id}}</th>
+      <td>{{onecontact.nom}}</td>
+      <td>{{onecontact.prenom}}</td>
+      <td>{{onecontact.email}}</td>
+      <td><a class="btn btn-warning m-1" href="{{ path ('contactupdate', {id: onecontact.id})}}">modifier</a>
+          <a class="btn btn-danger  m-1" href="{{ path ('contactdelete', {id: onecontact.id})}}">supprimer</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
 </table>
+
+<a class="btn btn-primary" href=" {{ path('form')}} ">Ajouter un contact</a>
 {% endblock %}

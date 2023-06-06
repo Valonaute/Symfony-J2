@@ -2,14 +2,15 @@
 
 {% block titre %}
 
-<h3 class="text-center">Formulaire de Contact</h3>
+<h3 class="text-center">Formulaire de modification des contacts</h3>
 
 {% endblock titre %}
+
 {%  block contenu %}
 
 {# La méthode form permet d'afficher le formulaire dans la vue #}
 
-{{ form  (formcontact) }}
+{{ form  (formupdate) }}
 
 <a class="btn btn-secondary" href=" {{ path ('contacts') }} "> Voir les contacts</a>
 {% endblock %}
